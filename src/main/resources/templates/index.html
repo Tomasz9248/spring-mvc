@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring CMS</title>
+</head>
+<body>
+<h1 th:text="${helloMessage}"></h1>
+<form th:action="@{/add}" method="post">
+    <input type="text" th:field="${formArticle.title}" placeholder="title..."><br>
+    <textarea th:field="${formArticle.content}" placeholder="content...."></textarea><br>
+    <input type="text" th:field="${formArticle.tags}" placeholder="tag1, tag2">
+    <input type="submit"/>
+</form>
+</body>
+</html>

@@ -4,6 +4,7 @@ import com.tomek.model.Article;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -11,15 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ArticleController {
 
     @PostMapping("/add")
-    // take parameters from request and put Model type object as method parameter
-    public String add(@RequestParam String title, @RequestParam String content, @RequestParam String tags, Model model) {
-        if (!title.isEmpty() || !content.isEmpty()) {
-            // create object based on parameters from request
-            Article article = new Article(title, content, tags);
-            // add object to Model
-            model.addAttribute(article);
-            // show succes.jsp
-            // in success JSP use JSTL to get parameters from Article object added to model
+    public String addArticle(@ModelAttribute Article formArticle, Model model) {
+        if (checkNotEmpty(formArticle)) {
+            model.addAttribute("formArticle", formArticle);
             return "success";
         } else {
             return "redirect:error";
@@ -29,5 +24,10 @@ public class ArticleController {
     @GetMapping("/error")
     public String error(){
         return "error";
+    }
+
+    private boolean checkNotEmpty(Article article) {
+        return (article.getTitle()!=null && article.getTitle().length()>0)
+                && (article.getContent()!=null && article.getContent().length()>0);
     }
 }

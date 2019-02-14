@@ -8,17 +8,16 @@ public class Article {
 
     private String title;
     private String content;
-    private List<String> tags;
+    private String tags;
 
     public Article(String title, String content, String tags) {
         this.title = title;
         this.content = content;
-        if (tags != null && tags.length() > 0) {
-            this.tags = Arrays.asList(tags.split(","));
-        } else {
-            this.tags = Collections.emptyList();
-        }
+        this.tags = tags;
     }
+
+    public Article(){}
+
 
     public String getTitle() {
         return title;
@@ -36,11 +35,11 @@ public class Article {
         this.content = content;
     }
 
-    public List<String> getTags() {
+    public String getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(String tags) {
         this.tags = tags;
     }
 }

@@ -3,11 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Registration error</title>
+    <title>Cannot add article</title>
 </head>
 <body>
-<h1>Sorry, registration could not be completed :(</h1>
-<h2>You are registered already!</h2>
+<h1>Title and Content cannot be empty</h1>
 </body>
 </html>

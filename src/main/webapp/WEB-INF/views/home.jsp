@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Home</title>
+    <title>Spring CMS</title>
 </head>
 <body>
-<h1>Event registration</h1>
-<form action="register" method="post">
-    <input name="firstName" placeholder="first name" /><br />
-    <input name="lastName" placeholder="last name" /><br />
-    <input type="submit" value="Register" />
+<h1>Witaj <c:out value = "${hello}"/>"</h1>
+<form action="add" method="post">
+    <input name="title" placeholder="Title" /><br/>
+    <textarea name="content">Content here...</textarea><br/>
+    <input name="tags" placeholder="tag1, tag2, tag3" /><br/>
+    <input type="submit" value="Add" />
 </form>
-<a href="show">Print participants</a>
 </body>
 </html>

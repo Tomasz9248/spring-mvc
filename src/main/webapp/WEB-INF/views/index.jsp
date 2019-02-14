@@ -4,14 +4,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Spring calculator</title>
+    <title>Shop</title>
 </head>
 <body>
-<h1>Spring calculator</h1>
-<form method="post">
-    <input name="valueA" type="number" /> <br />
-    <input name="valueB" type="number" /> <br />
-    <input value="Add" type="submit" />
+<h1>Shopping Cart</h1>
+<form action="add" method="post">
+    <input name="product" /><br/>
+    <input value="Add Product" type="submit" />
 </form>
+<a href="print">Print Products in console</a>
 </body>
 </html>

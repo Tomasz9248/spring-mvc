@@ -4,14 +4,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Shop</title>
+    <title>Registration error</title>
 </head>
 <body>
-<h1>Shopping Cart</h1>
-<form action="add" method="post">
-    <input name="product" /><br/>
-    <input value="Add Product" type="submit" />
-</form>
-<a href="print">Print Products in console</a>
+<h1>Sorry, registration could not be completed :(</h1>
+<h2>You are registered already!</h2>
 </body>
 </html>
